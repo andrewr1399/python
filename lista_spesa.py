@@ -10,18 +10,23 @@ while scelta != "4":
     if scelta == "1":
         prodotto = input("\nInserire prodotto: ")
         lista.append(prodotto)
+        print("\nProdotto aggiunto!\n")
         
     elif scelta == "2":
-        contatore = 1
-        for i in lista:
-            print(f"\n{contatore}. {i}")
-            contatore += 1
+        if len(lista) == 0:
+            print("\nLa lista è vuota\n")
+        else:
+
+            contatore = 1
+            for i in lista:
+                print(f"\n{contatore}. {i}")
+                contatore += 1
             
     elif scelta == "3":
         prodotto = input("\nInserire prodotto da rimuovere: ")
         
         if prodotto not in lista:
-            print("Non presente")
+            print("\nProdotto non presente\n")
             
         else:
             lista.remove(prodotto)
@@ -32,4 +37,5 @@ while scelta != "4":
         
     else:
         print("Scelta non valida")
+        
         
