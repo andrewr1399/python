@@ -16,8 +16,25 @@ def gioco(numero):
         tentativi += 1
 
         if numero_utente == numero:
-            print("Esatto!")
-            break
+            print(f"Esatto! hai impiegato {tentativi} tentativi")
+
+            try:
+                scelta = input("Vuoi giocare di nuovo? (s/n): ")
+
+                if scelta.lower() == 's':
+                    return gioco(numero)
+                
+                elif scelta.lower() == 'n':
+                    print("Grazie per aver giocato!")
+                    break
+
+                else:
+                    print("Scelta non valida. Uscita dal gioco.")
+                    break
+
+            except Exception as e:
+                print(f"Si è verificato un errore: {e}")
+                break
     
         elif numero_utente < numero:
             print("Troppo basso!")
@@ -26,7 +43,7 @@ def gioco(numero):
         else:
             print("Troppo alto!")
       
-    print(f"Esatto! hai impiegato {tentativi} tentativi")
+    
     return tentativi
     
 
